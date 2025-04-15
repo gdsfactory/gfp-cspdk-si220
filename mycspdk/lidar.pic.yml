@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../build/schemas/lidar.json
+connections: {}
+info: {}
+instances:
+  dbr:
+    component: array
+    settings:
+      add_ports: true
+      centered: true
+      column_pitch: 0
+      columns: 1
+      component: dbr
+      row_pitch: 3
+      rows: 8
+  s:
+    component: splitter_tree
+    settings:
+      bend_s: bend_s
+      coupler: mmi1x2
+      cross_section: strip
+      noutputs: 8
+      spacing:
+        - 50
+        - 50
+nets: []
+pdk: ""
+placements:
+  dbr:
+    dx: 0
+    dy: 0
+    mirror: false
+    rotation: 0
+    x: 300.0
+    y: 0.0
+  s:
+    dx: 0
+    dy: 0
+    mirror: false
+    rotation: 0
+    x: 0.0
+    y: 0.0
+ports: {}
+routes:
+  splitter_to_dbr:
+    links:
+      s,o2_2_1: dbr,o1_1_1
+      s,o2_2_2: dbr,o1_2_1
+      s,o2_2_3: dbr,o1_3_1
+      s,o2_2_4: dbr,o1_4_1
+      s,o2_2_5: dbr,o1_5_1
+      s,o2_2_6: dbr,o1_6_1
+      s,o2_2_7: dbr,o1_7_1
+      s,o2_2_8: dbr,o1_8_1
+    routing_strategy: route_bundle
+    settings:
+      cross_section: strip
+      radius: 5
+      sort_ports: true
+warnings: {}
